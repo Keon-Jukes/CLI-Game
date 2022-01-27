@@ -11,6 +11,7 @@ import { createSpinner } from 'nanospinner';
 
 console.log(chalk.yellow('Its Keon from the Grave'))
 
+
 let playerName;
 
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
@@ -47,7 +48,7 @@ async function askName() {
 
 
 
-//ask questions
+// question 1
 async function question1() {
     const answers = await inquirer.prompt({
         name: 'question1',
@@ -64,6 +65,7 @@ async function question1() {
     return handleAnswer(answers.question1 == 'July 18, 1996');
 }
 
+//question 2
 async function question2() {
     const answers = await inquirer.prompt({
         name: 'question2',
@@ -78,6 +80,7 @@ async function question2() {
     return handleAnswer(answers.question2 == 'no' || 'n')
 }
 
+//question 3
 async function question3() {
     const answers = await inquirer.prompt({
         name: 'question3',
@@ -94,6 +97,7 @@ async function question3() {
     return handleAnswer(answers.question3 == 'lost in space' || 'exonerated')
 }
 
+//question 4
 async function question4() {
     const answers = await inquirer.prompt({
         name: 'question4',
