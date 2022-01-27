@@ -52,7 +52,7 @@ async function question1() {
     const answers = await inquirer.prompt({
         name: 'question1',
         type: 'list',
-        message: 'What year was Keon born?',
+        message: 'When was Keon born?',
         choices: [
             'February 19, 1997',
             'July 18, 1996',
@@ -94,6 +94,21 @@ async function question3() {
     return handleAnswer(answers.question3 == 'lost in space' || 'exonerated')
 }
 
+async function question4() {
+    const answers = await inquirer.prompt({
+        name: 'question4',
+        type: 'input',
+        message: 'Are you afraid to die?',
+        choices: [
+            'yes',
+            'no',
+        ]
+    })
+
+    return handleAnswer(answers.question4 == 'no' || 'No')
+}
+
+
 //handle answer - success or fail
 async function handleAnswer(isCorrect) {
     const spinner = createSpinner('Checking answer...').start();
@@ -125,5 +140,6 @@ await askName();
 await question1();
 await question2();
 await question3();
+await question4();
 await winner();
 
