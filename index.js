@@ -19,7 +19,7 @@ const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
 // send a welcome message
 async function welcome() {
-    const glitchTitle = chalkAnimation.glitch('Players beware, losers die 💀')
+    const glitchTitle = chalkAnimation.glitch('Players beware, losers minds are stored in their CPU 💀')
 
     await sleep();
     glitchTitle.stop();
@@ -70,14 +70,14 @@ async function question2() {
     const answers = await inquirer.prompt({
         name: 'question2',
         type: 'confirm',
-        message: 'Is Keon still alive?',
+        message: 'is blockchain technology useless and over hyped?',
         choices: [
             'yes',
             'no'
         ]
     })
 
-    return handleAnswer(answers.question2 == 'no' || 'n')
+    return handleAnswer(answers.question2 == 'n')
 }
 
 //question 3
@@ -85,16 +85,16 @@ async function question3() {
     const answers = await inquirer.prompt({
         name: 'question3',
         type: 'list',
-        message: 'Where is Keons soul?',
+        message: 'Which fish can navigate by using the earths magnetic field?',
         choices: [
-            'Underground',
-            'lost in space',
-            'depleted',
-            'exonerated'
+            'Bass',
+            'Salmon',
+            'Lionfish',
+            'Zebrafish'
         ]
     })
 
-    return handleAnswer(answers.question3 == 'lost in space' || 'exonerated')
+    return handleAnswer(answers.question3 == 'Salmon')
 }
 
 //question 4
@@ -102,14 +102,14 @@ async function question4() {
     const answers = await inquirer.prompt({
         name: 'question4',
         type: 'input',
-        message: 'Are you afraid to die?',
+        message: 'Can you predict the future?',
         choices: [
             'yes',
             'no',
         ]
     })
 
-    return handleAnswer(answers.question4 == 'no' || 'No')
+    return handleAnswer(answers.question4 == 'yes')
 }
 
 
@@ -121,7 +121,7 @@ async function handleAnswer(isCorrect) {
     if (isCorrect) {
         spinner.success({ text: `Nice work ${playerName}. that was correct!` });
     } else {
-        spinner.error({ text: `💀 Game over, your mind is now minds forever ${playerName} 💀` })
+        spinner.error({ text: `💀 Game over, your mind is now mines forever ${playerName} 💀` })
         process.exit(1);
     }
 }
